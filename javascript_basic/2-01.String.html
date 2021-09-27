@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var txt = "ABCDEFGHIJKLMN";
+        console.log(txt.length); //글자길이
+
+        //indexOf
+        var str = "Please locate where 'locate'";
+        console.log(str.indexOf("locate"));
+
+        if(str.indexOf("John") > -1){
+            console.log("locate문자 발견");
+        }//if
+
+        //lastIndexOf
+        console.log(str.lastIndexOf("locate"));
+
+        console.log(str.search("locate"));
+
+        //slice
+        var str = "Apple, Banana, Kiwi";
+        // console.log(str.slice(7, 13));
+        // console.log(str.slice(7));
+        // console.log(str.slice(-12, -6)); //끝에서부터
+
+        //substring
+        console.log(str.substring(7, 13));
+
+        //substr
+        console.log(str.substr(7, 6)); //시작점을 기준으로 몇 글자를 가져올지를 두 번째 인자로 삽입
+
+        var birthday = "970527";
+        console.log(birthday.substr(0, 2));
+        console.log(birthday.substr(2, 2));
+
+        var birthday2 = "1997-05-27";
+        console.log(birthday2.substring(0, birthday2.indexOf("-"))); //1997 추출
+
+        //replace
+        // var str = "please visit here!";
+        // var str2 = str.replace("here", "there");
+        // console.log(str2);
+
+        // var str = "please visit here here here!";
+        // var str2 = str.replace("here", "there");
+        // console.log(str2);
+
+        var str = "please visit here HERE here!";
+        var str2 = str.replace(/here/gi, "there"); //전체를 바꾸기 위한 정규식(g - 전체, i - 대소문자 구분 X)
+        console.log(str2);
+
+        //uppercase
+        console.log(str.toUpperCase());
+
+        //lowercase
+        console.log(str.toLowerCase());
+        
+        //john 조회
+        //JOHN 조회
+        //DB에 john, John
+        
+        //concat
+        var txt1 = "Hello";
+        var txt2 = "World";
+        var txt3 = txt1 + " " + txt2;
+        console.log(txt3);
+        var txt4 = txt1.concat(" ", txt2);
+        console.log(txt4);
+
+        //trim - 앞뒤 공백 제거
+        var str = "       Hello World!      ";
+        console.log(str);
+        console.log(str.trim());
+
+        //padStart - 특정 자릿수 맞춰줄 때 유용
+        var str = "15";
+        console.log(str.padStart(4, 0));
+
+        //padEnd
+        console.log(str.padEnd(4, 0));
+
+        //charAt
+        var str = "Hello World";
+        console.log(str.charAt(0));
+
+        //split
+        var tags = "키보드, 기계식, 블루투스";
+        var arr = tags.split(",");
+        console.log(arr);
+
+        var birthday = "1997-06-12";
+        var arr2 = birthday.split("-");
+        console.log(arr2);
+        
+    </script>
+</body>
+</html>
