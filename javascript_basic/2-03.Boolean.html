@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x = true; //
+        var y = new Boolean(true);
+        
+        console.log(x == y); //true
+        console.log (x === y); //false
+
+        console.log(typeof x); // boolean
+        console.log(typeof y); // object
+        
+        console.log(Boolean(10 > 9));
+        console.log(10 > 9);
+
+        var x = 0;
+        console.log(x);
+        console.log(Boolean(x));
+
+        var x = ""; // 1을 제외한 모든 것(0 포함) false
+        console.log(Boolean(x));
+
+        // var s = "abc";
+        // var s2 = new String("abc");
+    </script>
+</body>
+</html>
