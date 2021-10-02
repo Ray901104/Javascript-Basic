@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"/>
+    <button type="button">저장</button>
+    <script>
+        // console.log(window);
+
+        //alert
+        // alert("이것은 alert 창 입니다.");
+        // var yn = confirm("정말 삭제하시겠습니까?");
+        // console.log(yn);
+
+        // if(yn) {
+        //     //삭제 실행
+        //     console.log("삭제실행");
+        // }
+
+        //prompt
+        // var txt = prompt("비밀번호를 입력하세요");
+
+        // if(txt == null){
+
+        // } else if(txt == ""){
+
+        // } else if(txt != ""){
+        //     console.log(txt);
+        // }
+        
+        //창이 열릴때의 동작
+        // window.open("https://naver.com");
+        
+        //인쇄화면 띄우기
+        // window.print();
+
+        //setTimeout
+        // setTimeout(function(){
+        //     console.log("5초후 프로그램 실행");
+        // }, 5000); //1000 - 1초
+        
+        var i = 0;
+        
+        //setInterval - 나중에 배울 웹소켓과 관련
+        //clearInterval로 빠져나가는 코드도 셋트로 작성하기
+        var fnc = setInterval(function(){
+            console.log("3초마다 프로그램 실행 - " + i);
+            if(i == 3){
+                //clearInterval
+                clearInterval(fnc);
+            }
+            i++;
+        }, 3000);
+
+    </script>
+</body>
+</html>
