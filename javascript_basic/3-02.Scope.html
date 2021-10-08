@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //scope는 변수에 대한 접근성 의미
+
+        //local scope
+        function myFunction(){
+            var carName = "Hyundai";
+            console.log(carName);
+        }
+
+        // console.log(carName); //함수안에 선언된 변수에 접근불가
+
+        myFunction();
+
+        //global scope
+        var carName2 = "KIA";
+        
+        //브라우저에서 script를 해석할 때 function들을 먼저 해석하므로
+        //위에서 호출해도 에러가 안남
+        myFunction2();
+
+        //함수안에서는 함수 밖에서 선언된 변수에 접근가능
+        function myFunction2(){
+            console.log(carName2);
+        }
+        
+        //함수가 변수안에 선언되어있으면 다른 함수처럼 먼저 해석되지 않음
+        // myFunction3(); //에러!
+
+        var myFunction3 = function(){
+            console.log(carName2);
+        }
+        
+        myFunction3();
+
+    </script>
+</body>
+</html>
