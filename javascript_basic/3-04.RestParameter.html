@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function sum(x1, x2){
+        //     var y = x1 + x2;
+        //     console.log(y);
+
+        //     return y;
+        // }
+        
+        // sum(5, 7);
+
+        // function sum(x1, x2, x3){
+        //     var y = x1 + x2 + x3;
+        //     console.log(y);
+
+        //     return y;
+        // }
+
+        // sum(5, 7, 3);
+
+        //Rest parameter - 인자가 몇개인지 확실하지 않을 때 작성(인자를 갯수의 크기만큼 배열로 받음)
+        function sum(...args){
+            var total = 0;
+            // for(var x of args){
+            //     total += x;
+            // }
+            args.forEach(function(x, index){
+                console.log(index);
+                total += x;
+            });
+
+            console.log(total);
+            return total;
+        }
+
+        sum(3, 2, 5, 7, 4, 23);
+    </script>
+</body>
+</html>
