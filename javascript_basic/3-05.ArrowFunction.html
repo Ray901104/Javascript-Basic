@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //기존의 함수구조
+        function hello(){
+            console.log("Hello World");
+            return "Hello World";
+        }
+        
+        var hello = function(){
+            console.log("Hello World");
+            return "Hello World";
+        }
+
+        //Arrow function - 익숙해지면 훨씬 간단하고 편리함
+
+        //return 함수의 경우 중괄호를 생략하고 return값 바로 작성
+        var hello = () => "Hello World";
+
+        //파라미터가 1개밖에 없는 경우 괄호 생략 가능
+        var hello = fullName => "Hello " + fullName;
+        console.log(hello("John Doe"));
+
+        //파라미터가 2개 이상인 경우
+        var hello = (firstName, lastName) => "Hello " + firstName + " " + lastName;
+
+        console.log(hello("John", "Doe"));
+
+        // var hello = () => {
+        //     console.log("Hello World");
+        //     return "Hello World";
+        // }
+    </script>
+</body>
+</html>
