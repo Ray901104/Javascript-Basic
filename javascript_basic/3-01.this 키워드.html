@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML에서의 this는 HTML element 자체를 의미 -->
+    <button type="button" onclick="this.style.backgroundColor='red'">클릭</button>
+    <button type="button" onclick="callFunc(this);">클릭2</button>
+    <select onchange="changeSelect(this);">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    <script>
+        // console.log(window);
+        console.log(this); //window 객체 의미
+
+        //오브젝트 안에서의 this는 오브젝트를 가리킴
+        var person = 
+        {
+            firstName: "John",
+            lastName: "Doe",
+            fullName: function(){
+                return this.firstName + " " + this.lastName;
+            }
+        };
+
+        console.log(person.fullName());
+
+        //함수 안에서의 this는 window 객체의미
+        function myFunction(){
+            console.log(this);
+        }
+
+        myFunction();
+
+        function callFunc(obj){
+            console.log(obj);
+        }
+
+        function changeSelect(obj){
+            console.log(obj.value);
+        }
+
+
+    </script>
+</body>
+</html>
