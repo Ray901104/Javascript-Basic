@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //정규식 (Regular Expression)
+
+        var patt = /World/i; //World - 패턴, i - modifier
+
+        var str = "Hello WORLD! world!";
+        console.log(str.search("World"));
+
+        console.log(str.search(/world/i)); // i - 대소문자 구분없이 검색
+        
+        console.log(str.replace("World", "Jeremy"));
+
+        console.log(str.replace(/world/ig, "Jeremy")); //g - 해당하는 문자 전부
+        
+        var str = "Is this all there is";
+        var patt1 = /[hat]/g;
+        var result = str.match(patt1);
+
+        console.log(result);
+
+        //[0-9] - 0~9사이의 숫자
+        var str = "123abc4523kkk";
+        var patt2 = /[0-9]/g;
+        var result = str.match(patt2);
+
+        console.log(result);
+
+        //(a|b) - a 또는 b
+        var str = "re, green, red, gree, gen, red";
+        var patt3 = /(red|green)/g;
+        var result = str.match(patt3);
+
+        console.log(result);
+
+        //\d 숫자 [0-9]
+        var str = "Give 100";
+        var patt4 = /\d/g;
+        var result = str.match(patt4);
+        
+        console.log(result);
+        
+        //\s 공백
+        var str = "Give 100";
+        var patt4 = /\s/g;
+        var result = str.match(patt4);
+        
+        console.log(result);
+
+        //\b - 시작이 OO인것
+        var str = "HELLO, LOOK AT ME!";
+        var patt5 = /\bLO/g;
+        var result = str.search(patt5);
+        
+        console.log(result);
+
+        //n+ - +앞에있는 n이 최소한 1개 이상
+        var str = "Hello";
+        var patt6 = /o+/g;
+        var result = str.match(patt6);
+
+        console.log(result);
+
+        //n* 0 혹은 n개
+        var str = "Hellooo World";
+        var patt7 = /lo*/g;
+        console.log(str.match(patt7));
+
+        //n? 0개이거나 1개
+        var str = "1, 100 or 1000";
+        var patt8 = /10?/g;
+        var result = str.match(patt8);
+
+        console.log(result);
+
+        //그 외 다른 정규식들을 참고할때는
+        //https://www.w3schools.com/
+
+        //사용예시 - 우편번호 5자리
+        //^ - 반드시 뒤에걸로 시작해라
+        //$ - 반드시 그것으로 끝나라
+        var patt9 = /^\d{5}$/;
+        var postalCode = "P23452Z";
+        
+        console.log(patt9.test(postalCode)); //test함수는 위치 반대
+
+        //전화번호
+        //010-2312-3354
+        
+        var patt10 = /^(010)-\d{4}-\d{4}$/;
+        //반드시 010으로 시작하고 그 뒤에 4자리 숫자가 있고, 4자리 숫자로 끝나는 것 검색
+        var tel = "010-2312-3354"
+
+        console.log(patt10.test(tel));
+
+        //이메일 주소
+        //seungwon.go@gamil.com
+        //seungwon.go@gamil.co.kr
+        var patt11 = /^\w+([\.-]?\w+)*@\w+(\.\w{2,3})+$/;
+
+        console.log(patt11.test("seungwongo@gamil.com"));
+    </script>
+</body>
+</html>
