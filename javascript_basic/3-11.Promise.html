@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        //Promise
+        //웹에서 서버로부터 데이터를 받아오기 전에 해당 데이터를 사용하는 그 아래 코드가
+        //실행되어 에러가 발생하는 경우가 많이 발생한다
+        //이를 방지하기 위한 것이 비동기화 통신을 위한 Promise(ES6)
+        var url = "";
+        var data = axios.get(url)
+                    .then(function(response){
+                        console.log(response.data);
+                        return response.data;
+                    });
+
+        function getData(){
+            //promise
+
+            return new Promise(function(resolve, reject){
+            axios.get(url)
+                .then(function(response){
+                console.log(response.data);
+                resolve(response.data);
+                });
+            });
+        }
+
+        var total = 0;
+
+        getData().then(function(data){
+            for(var item of data){
+                total += item.price;
+            }
+        });
+
+        // var total = 0;
+        // for(var item of data){
+        //     total += item.price;
+        // }
+
+        console.log(total);
+
+    </script>
+</body>
+</html>
