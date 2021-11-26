@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+<input type="text" id="searchTxt" onkeydown="checkEnter(event);"/>
+<button type="button" onclick="doSearch();">조회</button>
+<table id="tb">
+    <thead>
+    <tr>
+        <th onclick="doSort('name');">name</th>
+        <th onclick="doSort('email');">email</th>
+        <th onclick="doSort('company');">company</th>
+        <th onclick="doSort('address');">address</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script src="/scripts/4-04.user_data.js"></script>
+<script>
+
+</script>
+</body>
+</html>
